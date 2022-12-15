@@ -1,15 +1,22 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* NECESSÁRIO INSTALAR A libncurses5-dev */
+
+#include <ncurses.h>
 
 int main(void)
 {
     char cmd;
 
-    system("/bin/stty raw");
+    initscr();
+    raw();
+    keypad(stdscr,TRUE);
+    noecho();
 
-    while((int)(cmd = getchar()) != 27);
+    while((cmd = getch()) != 27)
+    {
 
-    system("/bin/stty cooked");
+    }
+
+    endwin();
 
     return 0;
 }
