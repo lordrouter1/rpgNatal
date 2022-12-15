@@ -1,40 +1,38 @@
-<<<<<<< HEAD
 #include "main.h"
-=======
-/* NECESSÁRIO INSTALAR A libncurses5-dev */
-
-#include <ncurses.h>
->>>>>>> master
 
 int main(void)
 {
     char cmd;
+    Player *player = player_init(50,50);
 
-<<<<<<< HEAD
     system("/bin/stty raw");
-    system("clear");
+    __clear;
 
-    while((int)(cmd = getchar()) != 27)
+    while((int)(cmd = getchar()) != KEY_EXIT)
     {
-        system("clear");
-        printf("%i",cmd);
+        __clear;
+
+        switch(cmd)
+        {
+            case KEY_RIGHT:
+                player_move(player,PLAYER_RIGHT,1);
+                break;
+            case KEY_LEFT:
+                player_move(player,PLAYER_LEFT,1);
+                break;
+            case KEY_UP:
+                player_move(player,PLAYER_UP,1);
+                break;
+            case KEY_DOWN:
+                player_move(player,PLAYER_DOWN,1);
+                break;
+        }
+
+        printf("(%i,%i)",player->x,player->y);
     }
 
     system("/bin/stty cooked");
-    system("clear");
-=======
-    initscr();
-    raw();
-    keypad(stdscr,TRUE);
-    noecho();
-
-    while((cmd = getch()) != 27)
-    {
-
-    }
-
-    endwin();
->>>>>>> master
+    __clear;
 
     return 0;
 }
