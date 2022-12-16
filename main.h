@@ -4,8 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 #include "Player/player.h"
+#include "Map/map.h"
 
 #define KEY_RIGHT 100
 #define KEY_LEFT 97

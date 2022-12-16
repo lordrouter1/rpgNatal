@@ -2,6 +2,7 @@ Player *player_init(int _xMax, int _yMax)
 {
     Player *p = malloc(sizeof(Player));
 
+    p->life = 100;
     p->xMax = _xMax;
     p->yMax = _yMax;
     p->x = 0;

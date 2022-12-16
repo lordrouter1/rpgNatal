@@ -8,6 +8,7 @@
 
 typedef struct
 {
+    int life;
     int x;
     int y;
     int xMax;

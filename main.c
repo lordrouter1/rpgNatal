@@ -5,6 +5,7 @@ int main(void)
     char cmd;
     Player *player = player_init(50,50);
 
+    /*
     system("/bin/stty raw");
     __clear;
 
@@ -33,6 +34,9 @@ int main(void)
 
     system("/bin/stty cooked");
     __clear;
+    */
+
+    draw_map(player,1);
 
     return 0;
 }
